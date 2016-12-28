@@ -1,10 +1,9 @@
 var express = require('express');
-var pageConfig = require('../config/page.js');
+var pageConfig = require('../config/page');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
+  res.render('task',{
   	config:{
   		nav:pageConfig.getSortedPages()
   	}

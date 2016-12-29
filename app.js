@@ -5,14 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var autoInc = require('mongoose-id-autoinc2);
+var autoInc = require('mongoose-id-autoinc');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var apiRole = require('./routes/api/role');
 
 var app = express();
-
 var db = mongoose.connect("mongodb://localhost/workflow");
 autoInc.init(db, "id", mongoose);
 

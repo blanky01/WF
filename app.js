@@ -13,7 +13,7 @@ var apiRole = require('./routes/api/role');
 
 var app = express();
 var db = mongoose.connect("mongodb://localhost/workflow");
-autoInc.init(db, "id", mongoose);
+autoInc.initialize(db, "id", mongoose);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

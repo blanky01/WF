@@ -13,7 +13,7 @@ var apiRole = require('./routes/api/role');
 
 var app = express();
 var db = mongoose.connect("mongodb://localhost/workflow");
-autoInc.initialize(db, "id", mongoose);
+autoInc.init(db, "id", mongoose);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,9 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.static(path.join(__dirname, 'static_app')));
-
 app.use('/', routes);
 app.use('/users', users);
 app.use('/api/role', apiRole);

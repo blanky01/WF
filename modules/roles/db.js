@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 
-require('../models/role');
+require('./model');
 
 var roleModel = mongoose.model('Role'); 
 

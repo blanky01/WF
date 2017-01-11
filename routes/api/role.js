@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var roleApi = require('../../api/role');
+var roleApi = require('../../modules/roles/db');
 
 router.get('/add', function(req, res, next){
 	roleApi.add(req.query).then(function(ret){

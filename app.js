@@ -38,15 +38,15 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.use(function(req, res, next){
+/*app.use(function(req, res, next){
 	res.jsonError = function(code, msg){
 		res.json({
 			code:code,
 			msg:msg
 		})
 	}
-	next();
-})
+	next(req, res, next);
+})*/
 // error handlers
 
 // development error handler
@@ -66,7 +66,7 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
-    message: err.message,
+    message: err.message+'abc',
     error: {}
   });
 });

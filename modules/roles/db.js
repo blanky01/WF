@@ -10,7 +10,7 @@ module.exports = {
 		var promise = new mongoose.Promise();
 		return roleModel.findOne({
 			name:'coreywang'
-		}).exec().then(function(err, role){
+		}).then(function(err, role){
 			console.log(err)
 			if(role){			
 				return {

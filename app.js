@@ -38,6 +38,15 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+app.use(function(req, res, next){
+	req.jsonError = function(code, msg){
+		req.json({
+			code:code,
+			msg:msg
+		})
+	}
+	next();
+})
 // error handlers
 
 // development error handler

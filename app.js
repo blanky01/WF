@@ -39,8 +39,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(req, res, next){
-	req.jsonError = function(code, msg){
-		req.json({
+	res.jsonError = function(code, msg){
+		res.json({
 			code:code,
 			msg:msg
 		})

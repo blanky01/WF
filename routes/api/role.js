@@ -4,10 +4,10 @@ var roleApi = require('../../modules/roles/db');
 
 router.get('/add', function(req, res, next){
 	if(!req.param('type')){
-		res.jsonError(-1, 'type is required);
+		res.jsonError(-1, 'type is required');
 	}
 	if(!req.param('name')){
-		res.jsonError(-1, 'name is required);
+		res.jsonError(-1, 'name is required');
 	}
 	roleApi.add(req.query).then(function(ret){
 		var ret = ret || {code:0};

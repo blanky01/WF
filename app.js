@@ -9,7 +9,7 @@ var autoInc = require('mongoose-id-autoinc');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var apiRole = require('./routes/api/role');
+var api = require('./routes/apis');
 
 var app = express();
 var db = mongoose.connect("mongodb://localhost/workflow");
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'static_app')));
 app.use('/', routes);
 app.use('/users', users);
-app.use('/api/role', apiRole);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,18 +37,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-/*app.use(function(req, res, next){
-	res.jsonError = function(code, msg){
-		res.json({
-			code:code,
-			msg:msg
-		})
-	}
-	next(req, res, next);
-})*/
-// error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

@@ -6,12 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var autoInc = require('mongoose-id-autoinc');
+var promise = require('bluebird');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/apis');
 
 var app = express();
+mongoose.Promise = promise;
 var db = mongoose.connect("mongodb://localhost/workflow");
 autoInc.init(db, "id", mongoose);
 

@@ -4,9 +4,11 @@ var path = require('path');
 var modulesPath = '../modules';
 var router = express.Router();
 
-fs.readdirSync(modulesPath).forEach(function(filename){
+router.use('/role', require('../modules/roles/router'));
+/*fs.readdirSync(modulesPath).forEach(function(filename){
 	var filePath = modulesPath + '/' + filename + '/router';
 	
+	router.use('/' + filename, require(filePath));
 	fs.exists(path.resolve(__dirname, filePath + '.js'), function(exists){
 	console.log(filePath+exists);
 		if(exists){
@@ -14,7 +16,5 @@ fs.readdirSync(modulesPath).forEach(function(filename){
 			require(filePath)(router);
 		}
 	})
-})
-
-console.log('fffffffffffffffffffffffffffffffffffffff');
+})*/
 module.exports = router;

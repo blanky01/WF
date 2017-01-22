@@ -42,8 +42,48 @@ router.get('/list', function(req, res, next){
 	roleApi.getList().then(function(roles){
 		res.json({
 			code:0,
-			msg:'abc',
+			msg:'',
 			data:roles
+		});
+	});
+})
+
+router.get('/update', function(req, res, next){
+	if(!req.query.type){
+		res.json({
+			code:-1,
+			msg:'type is need'
+		});
+		return;
+	}
+
+	roleApi.update().then(function(roles){
+		res.json({
+			code:0
+		});
+	});
+})
+
+router.get('/del', function(req, res, next){
+	if(!req.query.type){
+		res.json({
+			code:-1,
+			msg:'type is need'
+		});
+		return;
+	}
+
+	roleApi.dle(req).then(function(roles){
+		res.json({
+			code:0
+		});
+	});
+})
+
+router.get('/clear', function(req, res, next){
+	roleApi.clear().then(function(roles){
+		res.json({
+			code:0
 		});
 	});
 })

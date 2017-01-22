@@ -28,9 +28,10 @@ router.get('/add', function(req, res, next){
 		}
 	})
 })
+
 router.get('/get', function(req, res, next){
-	if(!req.param('type')){
-		res.jsonError({code:-1, msg:'type is required'});
+	if(!req.query('type')){
+		res.json({code:-1, msg:'type is required'});
 	}
 	roleApi.get(req.query).then(function(ret){
 		var ret = ret || {code:0};
@@ -49,7 +50,7 @@ router.get('/list', function(req, res, next){
 })
 
 router.get('/update', function(req, res, next){
-	if(!req.query.type){
+	/*if(!req.query.type){
 		res.json({
 			code:-1,
 			msg:'type is need'
@@ -57,11 +58,12 @@ router.get('/update', function(req, res, next){
 		return;
 	}
 
-	roleApi.update().then(function(roles){
+
+	roleApi.update(req).then(function(roles){
 		res.json({
 			code:0
 		});
-	});
+	});*/
 })
 
 router.get('/del', function(req, res, next){

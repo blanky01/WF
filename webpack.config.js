@@ -1,1 +1,6 @@
-webpack.config.js
+module.exports = {
+	entry:{
+		index:"app/index.js"
+	},
+	output:[]
+}

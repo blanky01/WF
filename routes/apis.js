@@ -5,6 +5,7 @@ var modulesPath = '../modules';
 var router = express.Router();
 
 router.use('/role', require('../modules/roles/router'));
+router.user('/task', require('../modue/tasks/router'));
 /*fs.readdirSync(modulesPath).forEach(function(filename){
 	var filePath = modulesPath + '/' + filename + '/router';
 	

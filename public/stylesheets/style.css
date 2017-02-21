@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navbar {
+	background-color:#6f5499;
+}
+.navbar a {
+	color:#fff;
+}

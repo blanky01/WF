@@ -11,4 +11,12 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/member', function(req, res, next) {
+  res.render('member', {
+  	config:{
+  		nav:pageConfig.getSortedPages()
+  	}
+  });
+});
+
 module.exports = router;

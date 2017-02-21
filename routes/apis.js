@@ -5,17 +5,6 @@ var modulesPath = '../modules';
 var router = express.Router();
 
 router.use('/role', require('../modules/roles/router'));
-router.user('/task', require('../modue/tasks/router'));
-/*fs.readdirSync(modulesPath).forEach(function(filename){
-	var filePath = modulesPath + '/' + filename + '/router';
-	
-	router.use('/' + filename, require(filePath));
-	fs.exists(path.resolve(__dirname, filePath + '.js'), function(exists){
-	console.log(filePath+exists);
-		if(exists){
-		console.log('file path:'+path.resolve(__dirname, filePath));
-			require(filePath)(router);
-		}
-	})
-})*/
+router.use('/task', require('../modules/tasks/router'));
+
 module.exports = router;

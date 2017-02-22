@@ -42,10 +42,25 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(2);
+	ReactDOM.render(React.createElement("div", null, "abc"), document.getElementById("example"));
 
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	module.exports = React;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = ReactDOM;
 
 /***/ }
 /******/ ]);
